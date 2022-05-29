@@ -149,3 +149,18 @@ li:hover {
 .margin {
   margin-left: 12px;
 }
+
+.modal1 {
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.49);
+  transform: scale(0);
+  transition: all 1s ease;
+}
+.active1 {
+  transform: scale(1);
+}

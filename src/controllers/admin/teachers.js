@@ -33,7 +33,9 @@ const POST_TEACHER = (req, res, next) => {
 
     data.push({
       id: data.length ? data[data.length - 1].id + 1 : 1,
-      teacher_id: data.length ? data[data.length - 1].teacher_id + 1 : 1,
+      teacher_id: data[data.length - 1].teacher_id
+        ? data[data.length - 1].teacher_id + 1
+        : 1,
       username: teacher_name,
       phone,
       teacher_name,

@@ -40,8 +40,6 @@ const POST_STUDENT = (req, res, next) => {
       .select("groups")
       .find((e) => e.group_name == student_name);
 
-    console.log(dataGroup);
-
     const foundStudent = data.find(
       (e) =>
         e.student_name == student_name && e.student_group_name == group_name
@@ -53,7 +51,9 @@ const POST_STUDENT = (req, res, next) => {
 
     data.push({
       id: data.length ? data[data.length - 1].id + 1 : 1,
-      student_id: data.length ? data[data.length - 1].student_id + 1 : 1,
+      student_id: data[data.length - 1].student_id
+        ? data[data.length - 1].student_id + 1
+        : 1,
       username: student_name,
       phone,
       student_name,

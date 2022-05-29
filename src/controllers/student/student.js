@@ -7,7 +7,10 @@ const GET_STUDENT = (req, res, next) => {
     if (role.role == "admin") {
       return res.redirect("/home");
     }
-    res.render("student");
+    const { id } = req.data;
+    const data = req.select("users").filter((e) => e.id == id);
+
+    res.render("student", { data });
   } catch (err) {
     next(err);
   }

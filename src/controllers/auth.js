@@ -14,8 +14,12 @@ const POST_AUTH = (req, res, next) => {
     let data = req.select("users");
     let group = req.select("groups");
 
-    group = group.find((e) => e.username == name && e.phone == phone);
-    data = data?.find((e) => e.username == name && e.phone == phone);
+    group = group.find(
+      (e) => e.username?.trim() == name && e.phone?.trim() == phone
+    );
+    data = data?.find(
+      (e) => e.username?.trim() == name && e.phone?.trim() == phone
+    );
     // data = data?.find((e) => e.username == name && e.phone == phone);
     if (data.role == "admin") {
       res.cookie("token", sign({ id: data.id, role: data.role }));

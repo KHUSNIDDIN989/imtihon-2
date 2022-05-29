@@ -126,7 +126,6 @@ const selectHendler = async () => {
   try {
     const res = await fetch("http://localhost:9999/groups_teacher");
     dataArr = await res.json();
-    console.log(dataArr);
 
     dsRender(dataArr);
   } catch (err) {

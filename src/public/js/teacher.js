@@ -21,6 +21,9 @@ const displayCharacters = (characters) => {
       <td>${character.courses_name}</td>
       <td> ${character.class_days}</td>
       <td>${character.class_time}</td>
+      <td><i id="homework" class="bi bi-book-half pointer" data-id=">${
+        character.teacher_id
+      }"></i></td>
     </tr>
         `;
     })
@@ -29,3 +32,14 @@ const displayCharacters = (characters) => {
 };
 
 loadCharacters();
+
+charactersList.addEventListener("click", (e) => {
+  let btn = e.target.matches("#homework");
+
+  if (btn) {
+    document.querySelector(".modal1").classList.toggle("active1");
+  }
+});
+document.querySelector(".unactive").addEventListener("click", (e) => {
+  document.querySelector(".modal1").classList.toggle("active1");
+});

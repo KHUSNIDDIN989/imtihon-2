@@ -20,6 +20,36 @@
   <body>
     <div class="container-fluid">
       <div class="main">
+        <div class="modal1 d-flex justify-content-center align-items-center">
+          <form
+            action="/teachergroup"
+            method="post"
+            class="form-control w-50 h-75 px-4 py-2"
+          >
+            <i class="be bi-x fs-1 pointer unactive"></i>
+
+            <input
+              type="text"
+              class="form-control my-2"
+              name="topic"
+              placeholder="Mavzu"
+            />
+            <textarea
+              name="textarea"
+              class="from-control my-2 p-2"
+              id=""
+              cols="26 "
+              rows="10"
+              placeholder="Nima haqida Yozmoqchisiz"
+            ></textarea>
+            <select name="group" id="" class="form-select">
+              <% data.forEach(element => { %>
+              <option value="<%= element %> "><%= element %></option>
+              <% }) %>
+            </select>
+            <button class="btn btn-primary w-100 mt-2">Qushish</button>
+          </form>
+        </div>
         <div class="row">
           <div class="col-md-3">
             <div class="sidebar bg-primary">
@@ -78,7 +108,7 @@
                     <th scope="col">Guruh nomi</th>
                     <th scope="col">Guruh yunalishi</th>
                     <th scope="col">Hafta kunlari</th>
-                    <th scope="col">Vaqti</th>
+                    <th scope="col" colspan="2">Vaqti</th>
                   </tr>
                 </thead>
                 <tbody id="tbodygroup"></tbody>

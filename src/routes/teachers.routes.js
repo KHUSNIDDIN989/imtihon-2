@@ -6,6 +6,7 @@ import {
 } from "../controllers/teacher/teacher.js";
 import VERIFY_TOKEN from "../middlewares/verfyToken.js";
 import {
+  POST_GROUP,
   TEACHER_GROUP,
   TEACHER_GROUP_FRONT,
 } from "../controllers/teacher/teacherGroup.js";
@@ -14,4 +15,5 @@ export default Router()
   .get("/teacher", VERIFY_TOKEN, GET_TEACHERS)
   .get("/getfront", GET_TEACHERS_FRONT)
   .get("/teachergroup", VERIFY_TOKEN, TEACHER_GROUP)
-  .get("/teacherfront", TEACHER_GROUP_FRONT);
+  .get("/teacherfront", TEACHER_GROUP_FRONT)
+  .post("/teachergroup", POST_GROUP);
