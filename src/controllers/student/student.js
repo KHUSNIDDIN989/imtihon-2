@@ -9,8 +9,8 @@ const GET_STUDENT = (req, res, next) => {
     }
     const { id } = req.data;
     const data = req.select("users").filter((e) => e.id == id);
-
-    res.render("student", { data });
+    const dataTopic = req.select("topic");
+    res.render("student", { data, dataTopic });
   } catch (err) {
     next(err);
   }
