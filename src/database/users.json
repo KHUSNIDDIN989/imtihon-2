@@ -1,0 +1,87 @@
+[
+    {
+        "username": "admin",
+        "phone": "1",
+        "role": "admin"
+    },
+    {
+        "id": 1,
+        "teacher_id": 1,
+        "username": "Toshmat",
+        "phone": "2",
+        "role": "admin"
+    },
+    {
+        "id": 2,
+        "student_id": 2,
+        "username": "Eshmat",
+        "phone": "1",
+        "role": "admin"
+    },
+    {
+        "id": 3,
+        "teacher_id": null,
+        "username": "Eshmat",
+        "phone": "+998912254522",
+        "teacher_name": "Eshmat",
+        "teacher_phone": "+998912254522",
+        "teacher_group_name": "NODEJS ",
+        "teacher_date": "May 29 2022",
+        "role": "teacher"
+    },
+    {
+        "id": 4,
+        "teacher_id": 1,
+        "username": "Toshmat",
+        "phone": "+998912254524",
+        "teacher_name": "Toshmat",
+        "teacher_phone": "+998912254524",
+        "teacher_group_name": "JAVA ",
+        "teacher_date": "May 29 2022",
+        "role": "teacher"
+    },
+    {
+        "id": 5,
+        "teacher_id": 2,
+        "username": "Ali",
+        "phone": "+998988898877",
+        "teacher_name": "Ali",
+        "teacher_phone": "+998988898877",
+        "teacher_group_name": "GO ",
+        "teacher_date": "May 29 2022",
+        "role": "teacher"
+    },
+    {
+        "id": 6,
+        "student_id": null,
+        "username": "Kuzivoy ",
+        "phone": "+998977777777",
+        "student_name": "Kuzivoy ",
+        "student_phone": "+998977777777",
+        "student_group_name": "nt-2 ",
+        "student_date": "May 29 2022",
+        "role": "student"
+    },
+    {
+        "id": 7,
+        "student_id": 1,
+        "username": "Akulabek",
+        "phone": "+998999999999",
+        "student_name": "Akulabek",
+        "student_phone": "+998999999999",
+        "student_group_name": "nt-3 ",
+        "student_date": "May 29 2022",
+        "role": "student"
+    },
+    {
+        "id": 8,
+        "student_id": 2,
+        "username": "Bilmasvoy",
+        "phone": "+998915555555",
+        "student_name": "Bilmasvoy",
+        "student_phone": "+998915555555",
+        "student_group_name": "nt-5 ",
+        "student_date": "May 29 2022",
+        "role": "student"
+    }
+]

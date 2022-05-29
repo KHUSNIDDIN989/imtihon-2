@@ -1,0 +1,84 @@
+<form class="row g-3 p-5" action="/groups" method="post">
+  <div><h2 class="text-primary fw-bold">Yangi guruh qo’shish</h2></div>
+  <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Guruh nomi</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputEmail4"
+      name="group_name"
+      placeholder="Guruh nomi"
+      title="Eng kami 1 ta harif bolsin eng kopi 15 ta harif bolsin va hamasi katta hariflarda bolsin"
+      required
+    />
+  </div>
+  <div class="col-md-4">
+    <label for="inputPassword4" class="form-label">Dars kunlari</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputPassword4"
+      placeholder="DU-CHOR-JUMA"
+      name="class_days"
+      placeholder="Dars kunlari"
+      pattern="[A-Z]{2,4}-[A-Z]{2,4}-[A-Z]{2,4}"
+      title="Dars kunlarini quyidagi misol buyicha kiriting DU-CHOR-JUMA"
+      required
+    />
+  </div>
+  <div class="col-4">
+    <label for="inputAddress" class="form-label">Dars vaqti</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputAddress"
+      name="class_time"
+      placeholder="Dars vaqti"
+      pattern="[0-9]{1,2}:[0-9]{1,2}-[0-9]{1,2}:[0-9]{1,2}"
+      title="Dars vaqtini quyidagi misol buyicha kiriting 9:00-11:00"
+      required
+    />
+  </div>
+  <div class="col-md-4">
+    <label for="inputEmail1" class="form-label">O’qituvchi</label>
+    <select name="teacher_name" id="teacher" class="form-select">
+      <% data.forEach(element => { %>
+      <option value="<%= element %> "><%= element %></option>
+      <% }) %>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label for="inputPassword2" class="form-label"
+      >O’qituvchi tell nomeri</label
+    >
+    <select name="courses_name" id="selectteacher" class="form-select"></select>
+  </div>
+
+  <div class="col-md-4">
+    <label for="inputPassword" class="form-label transparent"
+      >Ota onasi nomeri</label
+    >
+    <button type="submit" class="btn btn-primary btn_widht">Qo’shish</button>
+  </div>
+</form>
+
+<div class="searc d-flex w-100 justify-content-between px-5">
+  <h3 class="text-primary">Mavjud guruhlar</h3>
+  <select
+    class="form-select btn_widht"
+    id="filter"
+    aria-label="Default select example"
+  >
+    <% group.forEach(element => { %>
+    <option value="<%= element %> "><%= element %></option>
+    <% }) %>
+  </select>
+  <input
+    type="search"
+    name="search"
+    id="search"
+    class="form-control mx-2 btn_widht"
+    placeholder="Search"
+  />
+</div>
+<div class="row p-4 owevflow" id="owevflow"></div>

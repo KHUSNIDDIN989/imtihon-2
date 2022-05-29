@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "courses_id": 1,
+        "courses_name": "NODEJS",
+        "courses_price": "700 000",
+        "courses_date": "May 29 2022"
+    },
+    {
+        "id": 2,
+        "courses_id": 2,
+        "courses_name": "JAVA",
+        "courses_price": "700 000",
+        "courses_date": "May 29 2022"
+    },
+    {
+        "id": 3,
+        "courses_id": 3,
+        "courses_name": "GO",
+        "courses_price": "700 000",
+        "courses_date": "May 29 2022"
+    }
+]

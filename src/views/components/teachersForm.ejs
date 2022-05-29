@@ -1,0 +1,84 @@
+<form class="row g-3 p-5" action="/teachers" method="post">
+  <div><h2 class="text-primary fw-bold">Yangi o’qituvchi qo’shish</h2></div>
+  <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">O’qituvchi ismi</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputEmail4"
+      name="teacher_name"
+      placeholder="O’qituvchi ismi"
+      pattern="[A-Za-z]{3,15}"
+      title="Eng kami 3ta harif bolsin eng kopi 15ta harif bolsin"
+      required
+    />
+  </div>
+  <div class="col-md-4">
+    <label for="inputPassword4" class="form-label">Telefon raqam</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputPassword4"
+      name="phone"
+      value="+998"
+      pattern="^\+998[3-9][0-9][0-9]{3}[0-9]{2}[0-9]{2}"
+      title="Faqat son kiriting"
+      placeholder="Telefon raqam"
+      required
+    />
+  </div>
+  <div class="col-4">
+    <label for="inputAddress" class="form-label">Yo’nalish</label>
+    <select
+      class="form-select btn_widht"
+      id="filters"
+      aria-label="Default select example"
+      name="courses_name"
+    >
+      <% unique.forEach(element => { %>
+      <option value="<%= element %> "><%= element %></option>
+      pt <% }) %>
+    </select>
+  </div>
+  <div class="w-100 d-flex justify-content-end margin">
+    <div class="col-md-4">
+      <label for="inputPassword2" class="form-label transparent"
+        >Dars vaqti</label
+      >
+      <button type="submit" class="btn btn-primary btn_widht">Qo’shish</button>
+    </div>
+  </div>
+</form>
+<div class="searc d-flex w-100 justify-content-between px-5">
+  <h3 class="text-primary">Bizning o’qituvchilar</h3>
+  <select
+    class="form-select btn_widht"
+    id="filter"
+    aria-label="Default select example"
+  >
+    <% unique.forEach(element => { %>
+    <option value="<%= element%> "><%= element%></option>
+    <% }) %>
+  </select>
+  <input
+    type="search"
+    name="search"
+    id="search"
+    class="form-control mx-2 btn_widht"
+    placeholder="Search"
+  />
+</div>
+<div class="p-5 table_student">
+  <table class="table table-hover border table-striped">
+    <thead class="bg-color">
+      <tr>
+        <th scope="col">№</th>
+        <th scope="col">O’qituvchi ismi</th>
+        <th scope="col">Telefon nomer</th>
+        <th scope="col">Yo’nalish</th>
+        <th scope="col" colspan="2">O'qituvchi qushilgan san</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
