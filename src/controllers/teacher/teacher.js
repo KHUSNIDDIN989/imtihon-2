@@ -32,7 +32,6 @@ const GET_TEACHERS_FRONT = (req, res, next) => {
 
 const POST_TEACHER = (req, res, next) => {
   try {
-    console.log();
   } catch (err) {
     next(err);
   }

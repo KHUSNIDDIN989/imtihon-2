@@ -15,13 +15,13 @@ const VERIFY_TOKEN = (req, res, next) => {
       return res.status(401).redirect("/auth");
     }
 
-    // if (decode.role == "teacher") {
-    //   return res.redirect("/teacher");
-    // }
+    if (decode.role == "teacher") {
+      return res.redirect("/teacher");
+    }
 
-    // if (decode.role == "student") {
-    //   return res.redirect("student");
-    // }
+    if (decode.role == "student") {
+      return res.redirect("student");
+    }
 
     req.data = decode;
   });

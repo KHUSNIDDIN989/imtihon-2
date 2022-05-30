@@ -10,6 +10,7 @@ const GET_AUTH = (req, res, next) => {
 
 const POST_AUTH = (req, res, next) => {
   try {
+    console.log(req.body);
     const { name, phone } = req.body;
     let data = req.select("users");
     let group = req.select("groups");
@@ -17,9 +18,8 @@ const POST_AUTH = (req, res, next) => {
     group = group.find(
       (e) => e.username?.trim() == name && e.phone?.trim() == phone
     );
-    data = data?.find(
-      (e) => e.username?.trim() == name && e.phone?.trim() == phone
-    );
+    data = data?.find((e) => e.username == name && e.phone == phone);
+    console.log(data);
     // data = data?.find((e) => e.username == name && e.phone == phone);
     if (data.role == "admin") {
       res.cookie("token", sign({ id: data.id, role: data.role }));

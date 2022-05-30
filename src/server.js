@@ -26,17 +26,18 @@ app.set("views", cwd() + "/src/views/");
 app.use(express.urlencoded({ extended: true }));
 
 // routes
-app.use("/", VERIFY_TOKEN);
 app.use("/", authRoutes);
+app.use("/", VERIFY_TOKEN);
 app.use("/", adminRoutes);
 app.use("/", teachersRoutes);
 app.use("/", studentRoutes);
-
 // else page not found
 app.use("/", (_, res) => res.status(404).json("page not found"));
 
 app.use((err, req, res, next) => {
   console.log(err);
+
+  next();
 });
 // PORT RUNENG
 app.listen(PORT, () => {
